@@ -1,7 +1,13 @@
 {
   "name": "Codespace Hash Scanner Agent",
   "image": "mcr.microsoft.com/devcontainers/python:3.11-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
+  },
   "postCreateCommand": "bash .devcontainer/setup_agent.sh",
+  "postStartCommand": "bash .devcontainer/setup_agent.sh",
   "customizations": {
     "vscode": {
       "settings": {
