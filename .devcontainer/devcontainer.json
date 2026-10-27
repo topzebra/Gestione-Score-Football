@@ -1,0 +1,12 @@
+{
+  "name": "Codespace Hash Scanner Agent",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bookworm",
+  "postCreateCommand": "bash .devcontainer/setup_agent.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  }
+}
