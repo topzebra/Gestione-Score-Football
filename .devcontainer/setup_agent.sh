@@ -51,11 +51,11 @@ if pgrep -f "agent\.py" > /dev/null 2>&1; then
 fi
 
 echo "Avvio agente autonomo in background (ID: ${AGENT_ID})..."
-nohup python3 "${AGENT_DIR}/agent.py" \
+setsid python3 "${AGENT_DIR}/agent.py" \
   --server "${TARGET_SERVER}" \
   --secret "${AGENT_SECRET}" \
   --agent-id "${AGENT_ID}" \
   --threads 4 \
-  > "${AGENT_DIR}/agent.log" 2>&1 &
+  < /dev/null > "${AGENT_DIR}/agent.log" 2>&1 &
 
-echo "Agente avviato con PID $! su ${TARGET_SERVER}."
+echo "Agente avviato con setsid su ${TARGET_SERVER}."
