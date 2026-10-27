@@ -1,18 +1,11 @@
 {
-  "name": "Codespace Hash Scanner Agent",
-  "image": "mcr.microsoft.com/devcontainers/python:3.11-bookworm",
+  "name": "vt-score-worker",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
   "features": {
-    "ghcr.io/devcontainers/features/sshd:1": {
-      "version": "latest"
-    }
+    "ghcr.io/devcontainers/features/sshd:1": {}
   },
-  "postCreateCommand": "bash .devcontainer/setup_agent.sh",
-  "postStartCommand": "bash .devcontainer/setup_agent.sh",
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python"
-      }
-    }
-  }
+  "workspaceFolder": "/workspaces/Gestione-Score-Football",
+  "postCreateCommand": "bash .devcontainer/start_agent.sh",
+  "postStartCommand": "bash .devcontainer/start_agent.sh",
+  "postAttachCommand": "bash .devcontainer/start_agent.sh"
 }
