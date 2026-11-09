@@ -1,0 +1,11 @@
+{
+  "name": "vt-score-worker",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {}
+  },
+  "workspaceFolder": "/workspaces/Gestione-Score-Football",
+  "postCreateCommand": "bash .devcontainer/start_agent.sh",
+  "postStartCommand": "bash .devcontainer/start_agent.sh",
+  "postAttachCommand": "bash .devcontainer/start_agent.sh"
+}
